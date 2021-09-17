@@ -2,11 +2,52 @@
 <html>
   <head>
     <title>Back End Assessment</title>
+    <h1>Welcome to the feel good website</h1>
   </head>
   <body class="container">
     <button id="complimentButton">Get a compliment</button>
 
+    <button id="button-2">Get your Fortune!</button>
+
+    <input 
+      type="text"
+      id="uplifting-messages"
+      placeholder="Write something uplifting"/>
+      <br></br>
+
+    <label for='Favorite-restaurant'>What is Your Favorite Chinese Restaurant:</label>
+    <select 
+      name='Favorite-restaurant'
+      id="select-restaurant"
+      placeholder="Other">
+        <option value='panda express'>Panda Express</option>
+        <option value='lucky 5'>Lucky 5</option>
+        <option value='pf changs'>PF. Changs</option>
+        <option value='koizi'>Koizi</option>
+        <option value='pei wei'>Pei Wei</option>
+        <option value='other'>Other</option>
+    </select>
+    <br></br>
+
+    <label for='checkbox'>Do you feel Uplifted?</label>
+      <div>
+        <input type="checkbox" id="yes">
+        <label for="yes">Yes</label>
+      </div>
+    
+      <div>
+        <input type="checkbox" id="no">
+        <label for="no">No</label>
+      </div>
+     
+      <div>
+        <input type="checkbox" id="other-1">
+        <label for="other-1">Other</label>
+      </div>
+    <br></br>
+
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
     <script>
       document.getElementById("complimentButton").onclick = function () {
         axios.get("http://localhost:4000/api/compliment/")
@@ -14,6 +55,25 @@
               const data = response.data;
               alert(data);
             });
+      };
+      </script>
+
+      <script>
+      document.getElementById("button-2").onclick = function () {
+        axios.get("http://localhost:4000/api/fortune/")
+          .then(function (response) {
+            const data = response.data;
+            alert(data);
+          });
+      };
+    </script>
+    
+    <script>
+      document.getElementByName("Favorite-restaurant").onsubmit = function () {
+        axios.get("http://localhost:4000/api/restaurant")
+        .then(function (response) {
+          const data = response.data;
+        });
       };
     </script>
   </body>
