@@ -9,8 +9,11 @@ app.use(cors());
 app.use(express.json()); // When we want to be able to accept JSON.
 
 const {
-  createMessage
-} = require('./controller.js');
+  ctrl
+} = require('./controller.js'); 
+// Stuck here with the controller, the hope was to create something 
+// that would save their answer
+
 
 app.get("/api/compliment", (req, res) => {
   const compliments = ["Gee, you're a smart cookie!",
