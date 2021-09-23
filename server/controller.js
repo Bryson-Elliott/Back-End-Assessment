@@ -1,12 +1,16 @@
-const upliftingMessages = [
-    'You are amazing',
-    'You are worth it',
-];
+// const upliftingMessages = [
+//     'You are amazing',
+//     'You are worth it',
+// ];
 
 module.exports = {
     createMessage: (req, res) => {
-        const {message} = req.body
-        
+        const { message } = req.body
+        let upliftingMessages= {
+            
+        }  
+
+        res.status(200).send(response)
     }
 }
 

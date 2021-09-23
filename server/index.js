@@ -44,6 +44,6 @@ app.put("/api/restaurant", (req, res) => {
   res.status(200).send(response);
 });
 
-app.post('/api/uplifting-messages', ctrl.createMessage);
+app.put('/api/uplifting-messages', ctrl.createMessage);
 
 app.listen(4000, () => console.log("Server running on 4000"));
