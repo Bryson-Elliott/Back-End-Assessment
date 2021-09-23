@@ -8,9 +8,7 @@ app.use(cors());
 
 app.use(express.json()); // When we want to be able to accept JSON.
 
-const {
-  ctrl
-} = require('./controller.js'); 
+const ctrl = require('./controller.js'); 
 // Stuck here with the controller, the hope was to create something 
 // that would save their answer
 
@@ -41,7 +39,7 @@ app.get("/api/fortune", (req, res) => {
   res.status(200).send(randomFortunes);
 });
 
-app.post("/api/restaurant", (req, res) => {
+app.put("/api/restaurant", (req, res) => {
 
   res.status(200).send(response);
 });

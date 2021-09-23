@@ -44,6 +44,7 @@
         <input type="checkbox" id="other-1">
         <label for="other-1">Other</label>
       </div>
+      <button id="button-3">Submit</button>
     <br></br>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
@@ -69,11 +70,18 @@
     </script>
     
     <script>
-      document.getElementByName("Favorite-restaurant").onsubmit = function () {
+      document.getElementById("select-restaurant").onchange = function () {
         axios.get("http://localhost:4000/api/restaurant")
         .then(function (response) {
-          const data = response.data;
+        const data = response.data;
+
         });
+      };
+    </script>
+
+    <script>
+      document.getElementById("button-3").onclick = function () {
+        alert("Thanks for the feedback!");
       };
     </script>
   </body>
