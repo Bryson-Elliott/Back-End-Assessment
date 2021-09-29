@@ -9,12 +9,15 @@
 
     <button id="button-2">Get your Fortune!</button>
 
-    <input 
-      type="text"
-      id="uplifting-messages"
-      placeholder="Write something uplifting"/>
+    <form> 
+    <input type="text"
+    id="uplifting-messages"
+    placeholder="Write something uplifting"/>
+    <button>Submit</button>
+    </form>
       <br></br>
 
+      
     <label for='Favorite-restaurant'>What is Your Favorite Chinese Restaurant:</label>
     <select 
       name='Favorite-restaurant'
@@ -72,11 +75,8 @@
     <script>
       document.getElementById("select-restaurant").onchange = function () {
         axios.get("http://localhost:4000/api/restaurant")
-        .then(function (response) {
-        const data = response.data;
-
-        });
-      };
+         alert(response)
+        }
     </script>
 
     <script>

@@ -1,18 +1,16 @@
-const input = upliftingMessages
+const upliftingMessages = input
 
-// const upliftingMessages = [
-//     "You are amazing",
-//     "You are loved"
-// ];
+const upliftingMessages = [
+    "You are amazing",
+    "You are loved"
+];
 
-module.exports = {
+module.exports = { 
     createMessage: (req, res) => {
-        const upliftingMessages = req.body
-        alert(`${input}`)
+    const { input } = req.params
         res.status(200).send(response)
     }
 }
-
 
 
 
